@@ -13,6 +13,38 @@ import com.example.stocks.viewModel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
 
+        private lateinit var viewModel: LoginViewModel
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+                super.onCreate(savedInstanceState)
+                setContentView(R.layout.activity_login)
+
+                viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+
+                viewModel.loginSuccess.observe(this) { isSuccess ->
+                        if (isSuccess) {
+                                val intent = Intent(this, MainActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                        } else {
+                                Toast.makeText(
+                                        baseContext,
+                                        "Authentication failed.",
+                                        Toast.LENGTH_SHORT
+                                ).show()
+                        }
+                }
+
+                val loginButton = findViewById<Button>(R.id.loginButton)
+                loginButton.setOnClickListener {
+                        loginUser()
+                }
+
+                val signupTextView: TextView = findViewById(R.id.signUpTextView)
+                signupTextView.setOnClickListener {
+                        startActivity(Intent(this, SignupActivity::class.java))
+                }
+        }
 
         private fun loginUser() {
                 val emailEditText = findViewById<EditText>(R.id.loginEmailEditText)
