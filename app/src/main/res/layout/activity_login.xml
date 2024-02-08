@@ -31,5 +31,23 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"/>
 
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/loginPasswordEditText"
+        android:layout_marginTop="8dp"
+        android:text="Login" />
 
+    <TextView
+        android:id="@+id/signUpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Sign up!"
+        android:layout_below="@id/loginButton"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:clickable="true"/>
 </RelativeLayout>
