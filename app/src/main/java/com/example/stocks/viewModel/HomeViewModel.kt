@@ -54,7 +54,7 @@ class HomeViewModel(private val postDao: PostDao) : ViewModel() {
                             myPosts.add(it)
                         }
                     }
-                    _posts.postValue(myPosts)
+                    _posts.postValue(myPosts.reversed())
                 }
 
                 override fun onCancelled(error: DatabaseError) {}
