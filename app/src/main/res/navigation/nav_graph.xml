@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.stocks.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+
+
+        <action
+            android:id="@+id/action_editPost"
+            app:destination="@id/addPostFragment">
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addPostFragment"
+        android:name="com.example.stocks.fragment.AddPostFragment"
+        android:label="fragment_add_post"
+        tools:layout="@layout/fragment_add_post">
+
+        <action
+            android:id="@+id/action_addPostFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <argument
+            android:name="isForUpdate"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+        <argument
+            android:name="postId"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="caption"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="imageUrl"
+            app:argType="string"
+            android:defaultValue="" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.stocks.fragment.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile">
+
+        <action
+            android:id="@+id/action_editProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.stocks.fragment.StockInfoFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_stock_info">
+
+    </fragment>
+
+</navigation>
