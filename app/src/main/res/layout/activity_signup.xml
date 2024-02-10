@@ -6,7 +6,17 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/header_title_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:text="STOCKS"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/textView"
+        android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign up"

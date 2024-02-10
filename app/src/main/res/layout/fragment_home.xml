@@ -34,8 +34,12 @@
             android:id="@+id/toggleMyPosts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/md_theme_light_primary"
+            android:layout_marginStart="20dp"
             android:checked="false"
-            android:text="My Posts" />
+            android:shadowRadius="10"
+            android:text="My Posts"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
